@@ -61,6 +61,7 @@ defmodule Membrane.RTP.G711.Mixfile do
     [
       main: "readme",
       extras: ["LICENSE", "README.md"],
+      formatters: ["html"],
       source_ref: "v#{@version}",
       nest_modules_by_prefix: [Membrane.RTP.G711]
     ]
