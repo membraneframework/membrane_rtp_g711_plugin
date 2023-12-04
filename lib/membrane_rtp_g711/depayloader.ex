@@ -7,11 +7,11 @@ defmodule Membrane.RTP.G711.Depayloader do
 
   alias Membrane.{G711, RemoteStream, RTP}
 
-  def_input_pad :input, accepted_format: RTP, demand_mode: :auto
+  def_input_pad :input, accepted_format: RTP, flow_control: :auto
 
   def_output_pad :output,
     accepted_format: %RemoteStream{type: :packetized, content_format: G711},
-    demand_mode: :auto
+    flow_control: :auto
 
   @impl true
   def handle_stream_format(:input, _stream_format, _context, state) do
@@ -22,7 +22,7 @@ defmodule Membrane.RTP.G711.Depayloader do
   end
 
   @impl true
-  def handle_process(:input, buffer, _ctx, state) do
+  def handle_buffer(:input, buffer, _ctx, state) do
     {[buffer: {:output, buffer}], state}
   end
 end

@@ -8,7 +8,7 @@ defmodule Membrane.RTP.Opus.DepayloaderTest do
     test "sample_payload0.bin" do
       payload = File.read!("test/fixtures/sample_payload0.bin")
       buffer = %Buffer{payload: payload, metadata: %{}}
-      assert {actions, nil} = Depayloader.handle_process(:input, buffer, nil, nil)
+      assert {actions, nil} = Depayloader.handle_buffer(:input, buffer, nil, nil)
       assert [buffer: {:output, buffer}] == actions
     end
   end
