@@ -14,9 +14,9 @@ defmodule Membrane.RTP.G711.Payloader do
         %RemoteStream{type: :packetized, content_format: content_format}
         when content_format in [G711, nil]
       ),
-    demand_mode: :auto
+    flow_control: :auto
 
-  def_output_pad :output, accepted_format: RTP, demand_mode: :auto
+  def_output_pad :output, accepted_format: RTP, flow_control: :auto
 
   @impl true
   def handle_stream_format(:input, _stream_format, _ctx, state) do
@@ -24,7 +24,7 @@ defmodule Membrane.RTP.G711.Payloader do
   end
 
   @impl true
-  def handle_process(:input, buffer, _ctx, state) do
+  def handle_buffer(:input, buffer, _ctx, state) do
     {[buffer: {:output, buffer}], state}
   end
 end

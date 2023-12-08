@@ -19,7 +19,7 @@ defmodule Membrane.RTP.Opus.DepayloaderPipelineTest do
 
       pipeline =
         Testing.Pipeline.start_link_supervised!(
-          structure:
+          spec:
             child(:source, %Testing.Source{output: data, stream_format: %RTP{}})
             |> child(:depayloader, Depayloader)
             |> child(:sink, %Testing.Sink{})
@@ -29,7 +29,7 @@ defmodule Membrane.RTP.Opus.DepayloaderPipelineTest do
         assert_sink_buffer(pipeline, :sink, %Membrane.Buffer{payload: <<^elem::256>>})
       end
 
-      Testing.Pipeline.terminate(pipeline, blocking?: true)
+      Testing.Pipeline.terminate(pipeline)
     end
   end
 end
