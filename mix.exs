@@ -38,7 +38,7 @@ defmodule Membrane.RTP.G711.Mixfile do
   defp deps do
     [
       {:membrane_core, "~> 1.0"},
-      {:membrane_rtp_format, "~> 0.8.0"},
+      {:membrane_rtp_format, "~> 0.10.0"},
       {:membrane_g711_format, "~> 0.1.0"},
       {:ex_doc, ">=0.0.0", only: :dev, runtime: false},
       {:credo, ">=0.0.0", only: :dev, runtime: false},
