@@ -1,7 +1,7 @@
 defmodule Membrane.RTP.G711.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
   @github_url "https://github.com/jellyfish-dev/membrane_rtp_g711_plugin"
 
   def project do
@@ -38,7 +38,7 @@ defmodule Membrane.RTP.G711.Mixfile do
   defp deps do
     [
       {:membrane_core, "~> 1.0"},
-      {:membrane_rtp_format, "~> 0.10.0"},
+      {:membrane_rtp_format, "~> 0.11.0"},
       {:membrane_g711_format, "~> 0.1.0"},
       {:ex_doc, ">=0.0.0", only: :dev, runtime: false},
       {:credo, ">=0.0.0", only: :dev, runtime: false},
