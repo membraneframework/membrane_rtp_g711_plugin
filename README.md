@@ -14,7 +14,7 @@ The package can be installed by adding `membrane_rtp_g711_plugin` to your list o
 ```elixir
 def deps do
   [
-	  {:membrane_rtp_g711_plugin, "~> 0.3.1"}
+	  {:membrane_rtp_g711_plugin, "~> 0.3.2"}
   ]
 end
 ```

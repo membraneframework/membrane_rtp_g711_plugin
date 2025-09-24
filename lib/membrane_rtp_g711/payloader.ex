@@ -16,11 +16,11 @@ defmodule Membrane.RTP.G711.Payloader do
       ),
     flow_control: :auto
 
-  def_output_pad :output, accepted_format: RTP, flow_control: :auto
+  def_output_pad :output, accepted_format: %RTP{payload_format: G711}, flow_control: :auto
 
   @impl true
   def handle_stream_format(:input, _stream_format, _ctx, state) do
-    {[stream_format: {:output, %RTP{}}], state}
+    {[stream_format: {:output, %RTP{payload_format: G711}}], state}
   end
 
   @impl true
